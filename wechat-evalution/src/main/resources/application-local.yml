@@ -1,0 +1,28 @@
+### spring config
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:postgresql://106.14.215.14:5432/protoss
+    username: postgres
+    password: 123456
+  jpa:
+    show-sql: true
+  redis:
+    host: 106.14.215.14
+    port: 6379
+    password: F123456
+    database: 10
+
+wechat:
+  config:
+    url: https://api.weixin.qq.com/cgi-bin/
+    app-id: wxc8279123a055fb58
+    secret-key: 04c8181e6863dec2cec37c0b00e3bf39
+    token: test
+    aes-key:
+
+
+
+
+
+

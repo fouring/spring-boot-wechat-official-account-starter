@@ -1,0 +1,61 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://repo.spring.io/milestone' }
+    }
+
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:${springGradleVersion}"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springbootVersion}"
+    }
+}
+
+apply plugin: 'jacoco'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+dependencies {
+    compile project(":spring-boot-wechat-official-account-starter")
+    implementation(
+            "commons-io:commons-io:${commonIOVersion}",
+            "org.postgresql:postgresql:${postgresqlVersion}",
+            "com.yinshan.common:common-boot:${commonBootVersion}",
+            'org.springframework.boot:spring-boot-starter-data-jpa',
+            'org.springframework.cloud:spring-cloud-starter-config',
+            'org.springframework.boot:spring-boot-configuration-processor',
+            'org.springframework.boot:spring-boot-starter-data-redis:2.2.1.RELEASE',
+    )
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testImplementation("org.springframework.security:spring-security-test")
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+
+jacoco {
+    toolVersion = "0.8.5"
+    reportsDir = file("$buildDir/customJacocoReportDir")
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        html.enabled true
+        html.destination file("$buildDir/jacocoHtml")
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.7
+            }
+        }
+    }
+}
+check.dependsOn jacocoTestCoverageVerification

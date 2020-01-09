@@ -1,0 +1,18 @@
+group 'com.four.flower'
+version '0.0.1-SNAPSHOT'
+
+dependencies {
+    compileOnly("org.mapstruct:mapstruct-processor:${mapstructVersion}")
+    compileOnly('org.springframework.data:spring-data-redis:2.2.1.RELEASE')
+    compileOnly('org.springframework.boot:spring-boot:2.2.1.RELEASE')
+    compile(
+            "com.alibaba:fastjson:${fastjsonVersion}",
+            "com.squareup.okhttp3:okhttp:${okhttpVersion}",
+            "org.apache.commons:commons-lang3:${lang3Version}",
+            "org.redisson:redisson:${redissonVersion}",
+            "com.google.guava:guava:${guavaVersion}",
+            "org.mapstruct:mapstruct-jdk8:${mapstructVersion}",
+    )
+
+}
+
