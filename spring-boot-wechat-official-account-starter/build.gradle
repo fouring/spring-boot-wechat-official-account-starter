@@ -5,7 +5,9 @@ dependencies {
     compileOnly("org.mapstruct:mapstruct-processor:${mapstructVersion}")
     compileOnly('org.springframework.data:spring-data-redis:2.2.1.RELEASE')
     compileOnly('org.springframework.boot:spring-boot:2.2.1.RELEASE')
+    compileOnly('org.springframework.boot:spring-boot-starter-web:2.2.1.RELEASE')
     compile(
+            'commons-codec:commons-codec:1.13',
             "com.alibaba:fastjson:${fastjsonVersion}",
             "com.squareup.okhttp3:okhttp:${okhttpVersion}",
             "org.apache.commons:commons-lang3:${lang3Version}",

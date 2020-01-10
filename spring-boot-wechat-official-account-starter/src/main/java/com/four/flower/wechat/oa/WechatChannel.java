@@ -34,11 +34,12 @@ public class WechatChannel extends DefaultChannel<DefaultDirective>{
     /**
      * 验证消息自微信服务器
      * @param signature
-     * @param arr
+     * @param timestamp
+     * @param nonce
      * @return
      */
-    public Boolean verifySignature(String signature,String... arr){
-        return Objects.equals(SignUtils.sign(arr),signature);
+    public Boolean verifySignature(String signature,String timestamp,String nonce){
+        return Objects.equals(SignUtils.sign(getConfig().getToken(),timestamp,nonce),signature);
     }
 
     /**
