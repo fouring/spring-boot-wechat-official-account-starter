@@ -21,6 +21,6 @@ public class WechatProperties {
     protected String  token;
     protected String  aesKey;
     protected Boolean enableLocalLock  = true;
-    protected Boolean enableLocalStore = false;
+    protected Boolean enableLocalStore = true;
 
 }
