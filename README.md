@@ -7,10 +7,10 @@ config
 wechat:
   config:
     url: https://api.weixin.qq.com/cgi-bin/
-    app-id: wxc8279123a055fb58
-    secret-key: 04c8181e6863dec2cec37c0b00e3bf39
-    token: test
-    aes-key:
+    app-id: xxx
+    secret-key: xxx
+    token: xx
+    aes-key: xxx
     enable-local-lock: true
     enable-redis-store: true
 ```
