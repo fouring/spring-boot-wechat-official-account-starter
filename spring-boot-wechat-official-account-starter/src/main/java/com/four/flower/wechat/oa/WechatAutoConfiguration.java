@@ -25,9 +25,9 @@ public class WechatAutoConfiguration {
     @Bean
     public TokenStore initTokenStore(WechatProperties properties) {
         if (properties.getEnableLocalStore()) {
-            return new RedisTokenStore();
-        } else {
             return new LocalTokenStore();
+        } else {
+            return new RedisTokenStore();
         }
     }
 
@@ -36,6 +36,7 @@ public class WechatAutoConfiguration {
         if (properties.getEnableLocalLock()) {
             return new SingleInstanceLock();
         } else {
+            //todo
             return null;
         }
     }
