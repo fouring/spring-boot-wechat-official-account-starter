@@ -2,7 +2,8 @@
 
 ### spring-boot-wechat-official-account-starter auto configuration
 
-config
+config in *.yml
+
 ```
 wechat:
   config:
@@ -11,6 +12,6 @@ wechat:
     secret-key: xxx
     token: xx
     aes-key: xxx
-    enable-local-lock: true
-    enable-redis-store: true
+    enable-local-lock: true   ## wechat get fresh token lock, see TokenExpireLock
+    enable-redis-store: true  ## wechat token store, default LocalTokenStore,if true please config spring redis  
 ```
