@@ -21,7 +21,7 @@ wechat:
     token: test
     aes-key:
     enable-local-lock: true
-    enable-redis-store: true
+    enable-local-store: true
 
 
 

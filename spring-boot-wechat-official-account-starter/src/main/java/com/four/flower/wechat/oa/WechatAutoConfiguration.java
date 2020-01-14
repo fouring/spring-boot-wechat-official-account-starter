@@ -24,7 +24,7 @@ public class WechatAutoConfiguration {
 
     @Bean
     public TokenStore initTokenStore(WechatProperties properties) {
-        if (properties.getEnableRedisStore()) {
+        if (properties.getEnableLocalStore()) {
             return new RedisTokenStore();
         } else {
             return new LocalTokenStore();
