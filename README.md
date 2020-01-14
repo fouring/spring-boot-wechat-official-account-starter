@@ -19,3 +19,5 @@ wechat:
   * enable-local-lock 刷新token是否使用本地锁 可以查看 TokenExpireLock，默认为SingleInstanceLock，单个实例场景可以打开，否则使用redis分布式锁，使用redission实现。
   
   * enable-redis-store 存储token是否使用redis 默认为LocalTokenStore，单个实例场景可以打开，否则使用redis 
+  
+  * 如果用到 redis 请配置 spring.redis 信息
