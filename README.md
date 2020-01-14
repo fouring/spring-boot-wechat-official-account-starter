@@ -13,11 +13,11 @@ wechat:
     token: xx
     aes-key: xxx
     enable-local-lock: true   
-    enable-redis-store: true 
+    enable-local-store: true 
 ```
 
   * enable-local-lock 刷新token是否使用本地锁 可以查看 TokenExpireLock，默认为SingleInstanceLock，单个实例场景可以打开，否则使用redis分布式锁，使用redission实现。
   
-  * enable-redis-store 存储token是否使用redis 默认为LocalTokenStore，单个实例场景可以打开，否则使用redis 
+  * enable-local-store 存储token是否使用用本存储 默认为 LocalTokenStore，单个实例场景可以打开，否则使用redis 
   
   * 如果用到 redis 请配置 spring.redis 信息
