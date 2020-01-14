@@ -3,27 +3,37 @@
     {
       "name": "wechat.config.url",
       "type": "java.lang.String",
-      "sourceType": "com.four.flower.wechat.oa.config.WechatChannelConfig"
+      "sourceType": "com.four.flower.wechat.oa.config.WechatProperties"
     },
     {
       "name": "wechat.config.app-id",
       "type": "java.lang.String",
-      "sourceType": "com.four.flower.wechat.oa.config.WechatChannelConfig"
+      "sourceType": "com.four.flower.wechat.oa.config.WechatProperties"
     },
     {
       "name": "wechat.config.secret-key",
       "type": "java.lang.String",
-      "sourceType": "com.four.flower.wechat.oa.config.WechatChannelConfig"
+      "sourceType": "com.four.flower.wechat.oa.config.WechatProperties"
     },
     {
       "name": "wechat.config.token",
       "type": "java.lang.String",
-      "sourceType": "com.four.flower.wechat.oa.config.WechatChannelConfig"
+      "sourceType": "com.four.flower.wechat.oa.config.WechatProperties"
     },
     {
       "name": "wechat.config.aes-key",
       "type": "java.lang.String",
-      "sourceType": "com.four.flower.wechat.oa.config.WechatChannelConfig"
+      "sourceType": "com.four.flower.wechat.oa.config.WechatProperties"
+    },
+    {
+      "name": "wechat.config.enable-redis-store",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.four.flower.wechat.oa.config.WechatProperties"
+    },
+    {
+      "name": "wechat.config.enable-local-lock",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.four.flower.wechat.oa.config.WechatProperties"
     }
 
   ]

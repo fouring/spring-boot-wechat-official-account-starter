@@ -1,6 +1,6 @@
 package com.four.flower.wechat.oa;
 
-import com.four.flower.wechat.oa.config.WechatChannelConfig;
+import com.four.flower.wechat.oa.config.WechatProperties;
 import com.four.flower.wechat.oa.directive.DefaultDirective;
 import com.four.flower.wechat.oa.directive.TokenDirective;
 import com.four.flower.wechat.oa.lock.TokenExpireLock;
@@ -24,11 +24,11 @@ import java.util.Objects;
 public class WechatChannel extends DefaultChannel<DefaultDirective>{
 
     @Autowired
-    private TokenExpireLock     lock;
+    private TokenExpireLock  lock;
     @Autowired
-    private WechatChannelConfig config;
+    private WechatProperties config;
     @Autowired
-    private TokenStore          tokenStore;
+    private TokenStore       tokenStore;
 
 
     /**
@@ -63,7 +63,7 @@ public class WechatChannel extends DefaultChannel<DefaultDirective>{
     }
 
     /**
-     * 访问微信获取token
+     * 访问微信接口获取token
      * @return
      */
     private String obtainToken(){
@@ -74,7 +74,7 @@ public class WechatChannel extends DefaultChannel<DefaultDirective>{
         TokenDirective tokenDirective = new TokenDirective(this);
         sendDirective(tokenDirective);
         TokenResult result = tokenDirective.getResponse();
-        tokenStore.store(result.getAccessToken(),result.getExpiresIn() - 15);
+        tokenStore.store(result.getAccessToken(),result.getExpiresIn());
         return result.getAccessToken();
     }
 

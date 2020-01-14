@@ -1,5 +1,6 @@
 package com.four.flower.wechat.oa.store;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.util.concurrent.TimeUnit;
@@ -12,11 +13,8 @@ public class RedisTokenStore implements TokenStore{
 
     private static final String WECHAT_ACCESS_TOKEN = "wechat:token:cache:key";
 
+    @Autowired
     protected StringRedisTemplate redisTemplate;
-
-    public RedisTokenStore(StringRedisTemplate redisTemplate){
-        this.redisTemplate = redisTemplate;
-    }
 
     @Override
     public void store(String token, Integer expireTime) {

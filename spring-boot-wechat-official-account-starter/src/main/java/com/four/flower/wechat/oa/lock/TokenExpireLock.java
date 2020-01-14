@@ -9,7 +9,6 @@ import java.util.function.Supplier;
  **/
 public abstract class TokenExpireLock {
 
-
    public <T> T lockAndRelease(Supplier<T> supplier){
        try {
            if(lock()){
