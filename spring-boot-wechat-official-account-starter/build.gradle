@@ -9,6 +9,7 @@ dependencies {
     compileOnly('org.springframework.boot:spring-boot-starter-web:2.2.1.RELEASE')
     compile(
             'commons-codec:commons-codec:1.13',
+            'com.thoughtworks.xstream:xstream:1.4.11.1',
             "com.alibaba:fastjson:${fastjsonVersion}",
             "com.squareup.okhttp3:okhttp:${okhttpVersion}",
             "org.apache.commons:commons-lang3:${lang3Version}",
