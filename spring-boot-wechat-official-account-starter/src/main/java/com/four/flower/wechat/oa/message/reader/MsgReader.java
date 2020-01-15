@@ -5,6 +5,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.naming.NameCoder;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
+
 /**
  * @author xiejing
  * @date 2020-01-15 15:59
@@ -15,7 +16,6 @@ public class MsgReader {
 
     static {
         xstream = new XStream(new DomDriver("UTF-8", new CaseNameCoder()));
-        XStream.setupDefaultSecurity(xstream);
     }
 
     public static String writer(Object object) {

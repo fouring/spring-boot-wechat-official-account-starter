@@ -10,7 +10,9 @@ import com.four.flower.wechat.oa.message.Voice;
 import lombok.Getter;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * @author xiejing
@@ -18,13 +20,14 @@ import java.util.Optional;
  **/
 public enum MsgType {
 
-    LINK(Link.class),
-    LOCATION(Location.class),
-    SHORTVIDEO(SmallVideo.class),
-    VIDEO(Video.class),
-    VOICE(Voice.class),
-    IMAGE(Image.class),
-    TEXT(Text.class);
+    link(Link.class),
+    location(Location.class),
+    shortvideo(SmallVideo.class),
+    video(Video.class),
+    voice(Voice.class),
+    image(Image.class),
+    text(Text.class);
+
 
     @Getter
     private Class tClass;
@@ -44,6 +47,4 @@ public enum MsgType {
         }
         throw new RuntimeException("can't find msg type");
     }
-
-
 }

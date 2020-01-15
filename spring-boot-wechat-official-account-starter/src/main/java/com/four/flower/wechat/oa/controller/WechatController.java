@@ -2,6 +2,7 @@ package com.four.flower.wechat.oa.controller;
 
 import com.four.flower.wechat.oa.WechatChannel;
 import com.four.flower.wechat.oa.message.Message;
+import com.four.flower.wechat.oa.message.Text;
 import com.four.flower.wechat.oa.message.reader.MsgReader;
 import com.four.flower.wechat.oa.type.MsgType;
 import lombok.extern.slf4j.Slf4j;
@@ -38,7 +39,7 @@ public abstract class WechatController {
         if (channel.verifySignature(signature, timestamp, nonce)) {
             return echostr;
         }
-        return verifySignatureFailure();
+        return null;
     }
 
     /**
@@ -59,15 +60,21 @@ public abstract class WechatController {
                        @RequestParam("timestamp") String timestamp,
                        @RequestParam(name = "encrypt_type", required = false) String encType,
                        @RequestParam(name = "msg_signature", required = false) String msgSignature) {
-        if (!channel.verifySignature(signature, timestamp, nonce)) {
-            return verifySignatureFailure();
-        }
+
         Message message = MsgReader.reader(xml, MsgType.getMsgClass(xml));
+        if (!channel.verifySignature(signature, timestamp, nonce)) {
+            return verifySignatureFailure(message);
+        }
         return msgHandler(message);
     }
 
-    public String verifySignatureFailure() {
-        return "IllegalAccessError";
+    /**
+     * recommend override the method
+     *
+     * @return
+     */
+    public String verifySignatureFailure(Message message) {
+        return Text.makeFailure(message);
     }
 
     public abstract String msgHandler(Message message);
