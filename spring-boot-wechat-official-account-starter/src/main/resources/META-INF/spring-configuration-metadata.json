@@ -34,7 +34,11 @@
       "name": "wechat.config.enable-local-lock",
       "type": "java.lang.Boolean",
       "sourceType": "com.four.flower.wechat.oa.config.WechatProperties"
+    },
+    {
+      "name": "wechat.config.fresh-token-lock-wait-time",
+      "type": "java.lang.Integer",
+      "sourceType": "com.four.flower.wechat.oa.config.WechatProperties"
     }
-
   ]
 }

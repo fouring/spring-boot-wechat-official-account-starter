@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author xiejing
  * @date 2020-01-09 16:11
  **/
-public class SingleInstanceLock extends TokenExpireLock {
+public class SingleInstanceLock extends TokenExpireFreshLock {
 
     private Lock lock = new ReentrantLock();
 

@@ -1,8 +1,9 @@
 package com.four.flower.wechat.oa;
 
 import com.four.flower.wechat.oa.config.WechatProperties;
+import com.four.flower.wechat.oa.lock.RedisssionLock;
 import com.four.flower.wechat.oa.lock.SingleInstanceLock;
-import com.four.flower.wechat.oa.lock.TokenExpireLock;
+import com.four.flower.wechat.oa.lock.TokenExpireFreshLock;
 import com.four.flower.wechat.oa.store.LocalTokenStore;
 import com.four.flower.wechat.oa.store.RedisTokenStore;
 import com.four.flower.wechat.oa.store.TokenStore;
@@ -32,14 +33,16 @@ public class WechatAutoConfiguration {
     }
 
     @Bean
-    public TokenExpireLock initTokenExpireLock(WechatProperties properties) {
+    public TokenExpireFreshLock initTokenExpireLock(WechatProperties properties) {
         if (properties.getEnableLocalLock()) {
             return new SingleInstanceLock();
         } else {
             //todo
-            return null;
+            return new RedisssionLock();
         }
     }
+
+
 
 
 }

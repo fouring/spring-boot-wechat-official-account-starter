@@ -3,6 +3,7 @@ version '0.0.1-SNAPSHOT'
 
 dependencies {
     compileOnly("org.mapstruct:mapstruct-processor:${mapstructVersion}")
+    compileOnly("org.redisson:redisson:${redissonVersion}")
     compileOnly('org.springframework.data:spring-data-redis:2.2.1.RELEASE')
     compileOnly('org.springframework.boot:spring-boot:2.2.1.RELEASE')
     compileOnly('org.springframework.boot:spring-boot-starter-web:2.2.1.RELEASE')

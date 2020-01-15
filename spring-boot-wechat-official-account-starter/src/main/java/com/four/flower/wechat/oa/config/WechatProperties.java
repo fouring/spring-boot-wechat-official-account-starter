@@ -20,7 +20,8 @@ public class WechatProperties {
     protected String  secretKey;
     protected String  token;
     protected String  aesKey;
-    protected Boolean enableLocalLock  = true;
-    protected Boolean enableLocalStore = true;
+    protected Integer freshTokenLockWaitTime = 15;
+    protected Boolean enableLocalLock        = true;
+    protected Boolean enableLocalStore       = true;
 
 }

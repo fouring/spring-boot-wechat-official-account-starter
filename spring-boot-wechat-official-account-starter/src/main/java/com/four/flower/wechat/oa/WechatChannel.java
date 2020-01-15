@@ -3,7 +3,7 @@ package com.four.flower.wechat.oa;
 import com.four.flower.wechat.oa.config.WechatProperties;
 import com.four.flower.wechat.oa.directive.DefaultDirective;
 import com.four.flower.wechat.oa.directive.TokenDirective;
-import com.four.flower.wechat.oa.lock.TokenExpireLock;
+import com.four.flower.wechat.oa.lock.TokenExpireFreshLock;
 import com.four.flower.wechat.oa.response.TokenResult;
 import com.four.flower.wechat.oa.store.TokenStore;
 import com.four.flower.wechat.oa.utils.SignUtils;
@@ -24,9 +24,9 @@ import java.util.Objects;
 public class WechatChannel extends DefaultChannel<DefaultDirective>{
 
     @Autowired
-    private TokenExpireLock  lock;
+    private TokenExpireFreshLock lock;
     @Autowired
-    private WechatProperties config;
+    private WechatProperties     config;
     @Autowired
     private TokenStore       tokenStore;
 
